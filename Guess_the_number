@@ -1,0 +1,27 @@
+#!/bin/bash
+
+num=$(($RANDOM%100))
+n=-1
+guesses=1
+
+
+        echo "Try to guess the number I'm thinking of:"
+        read n
+        while [ $n !=  $num ]
+        do
+                guesses=$((guesses+1))
+
+        if [ $n -lt $num ]
+        then
+                echo "Try higher!"
+        else
+                echo "Try lower!"
+
+        fi
+        echo "Try to guess again:"
+        read n
+done
+
+echo "Congratulations! You were able to guess the number after $guesses guesses!"
+
+
